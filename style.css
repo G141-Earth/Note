@@ -1,0 +1,434 @@
+body
+{
+	margin: 0;
+	color: #27333f;
+	background-color: #f7f5f2;
+	font-family: "YuGothL";
+}
+
+p
+{
+	text-align: justify;
+	margin-bottom: 15px;
+}
+
+header
+{
+	padding: 4rem 2rem;
+	text-align: center;
+	background-color: #EFEBE5;
+	border-bottom: 50px solid #d6cb00;
+	border-bottom: 50px solid #D9B95B;
+
+}
+
+header *, h2
+{
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+h2
+{
+	margin: 15px 0;
+	text-align: left;
+	line-height: 40px;
+}
+
+article, #form
+{
+	width: 100%;
+	background-color: white;
+	border-radius: 5px;
+	padding: 15px;
+	box-shadow: gray 0 0 2px;
+	margin-top: 15px;
+}
+
+article:last-child
+{
+	margin-bottom: 15px;
+}
+
+article a, form .playground
+{
+	padding: 8px 24px;
+	box-shadow: gray 0 0 2px;
+	border-radius: 500px;
+	display: inline-block;
+}
+
+form .playground
+{
+	padding: 8px;
+}
+
+article a[data-status="0"], article a[data-status="1"], article a[data-status="2"],  #preview span[data-status="0"],  #preview span[data-status="1"],  #preview span[data-status="2"]
+{
+	padding: 8px 24px 8px 40px;
+}
+
+article a[data-status="0"]::before, article a[data-status="1"]::before, article a[data-status="2"]::before,  #preview span[data-status="0"]::before,  #preview span[data-status="1"]::before,  #preview span[data-status="2"]::before, .playground div
+{
+	position: absolute;
+	content: "";
+	width: 24px; height: 24px;
+	border-radius: 100%;
+	left: 8px;
+
+}
+
+#red, #yellow, #green
+{
+	background-color: #cfcfcf;
+}
+
+#red[data-status="0"], article a[data-status="0"]::before,  #preview span[data-status="0"]::before, .task *[data-prompt="top"]:hover
+{
+	background-color: #ff564d;
+	color: #fff;
+}
+
+#yellow[data-status="1"], article a[data-status="1"]::before,  #preview span[data-status="1"]::before, .task *[data-prompt="middle"]:hover
+{
+	background-color: #f3c518;
+	color: #000;
+}
+
+#green[data-status="2"], article a[data-status="2"]::before,  #preview span[data-status="2"]::before, .task *[data-prompt="bottom"]:hover
+{
+	background-color: #29cd38;
+	color: #000;
+}
+
+.playground div
+{
+	position: inherit;
+	float: left;
+	margin-right: 8px;
+}
+
+.playground div:last-child
+{
+	margin-right: 0;
+}
+
+.link, .task
+{
+	width: fit-content;
+	margin: auto;
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+article .task, form .task
+{
+	cursor: default;
+	margin: 0;
+	overflow: hidden;
+	box-shadow: gray 0 0 2px;
+	border-radius: 500px;
+}
+
+form .task
+{
+	margin: auto;
+}
+
+article p
+{
+	padding: 15px 0;
+	border-color: #cfcfcf;
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+}
+
+.task span, .task button
+{
+padding: 8px 24px;
+float: left;
+min-width: 109px;
+text-align: center;
+border: 0;
+text-transform: uppercase;
+background-color: transparent;
+}
+
+.task::after, form .playground::after
+{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.mark
+{
+	background-color: #e9d2fe;
+}
+
+@font-face
+{
+	font-family: "YuGothL";
+	src: url("YuGothL.ttc");
+}
+
+.task *[data-prompt="top"]:hover, .task .delete:hover
+{
+	background-color: #f62b30;
+	color: #fff;
+	cursor: pointer;
+}
+
+.task *[data-prompt="middle"]:hover, .task .update:hover
+{
+	background-color: #fecb00;
+	color: #000;
+	cursor: pointer;
+}
+
+.task *[data-prompt="bottom"]:hover, .task .create:hover
+{
+	background-color: #398244;
+	color: #fff;
+	cursor: pointer;
+}
+
+.task[disabled], #red[disabled], #yellow[disabled], #green[disabled]
+{
+	opacity: 0.45;
+}
+
+.task[disabled] *:hover
+{
+	background-color: transparent;
+	cursor: default;
+	color: #000;
+}
+
+.button
+{
+	width: 100%;
+	margin-top: 15px;
+	background-color: #fff;
+	box-shadow: gray 0 0 2px;
+	border-radius: 5px;
+}
+
+.button:hover
+{
+	cursor: pointer;
+}
+
+.button span
+{
+	width: 100%;
+	text-align: center;
+	padding: 8px 24px;
+	padding-left: 64px;
+}
+
+.button span::before, ul.list li ul li .del, .del::before
+{
+	content: "+";
+	display: block;
+	width: 40px; height: 100%;
+	border-right: 0.5px #d3d3d3 solid;
+	position: absolute;
+	left: 0; top: 0;
+	padding: 8px;
+	text-align: center;
+	border-radius: 0 0 0 5px;
+}
+
+.del
+{
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.del::before
+{
+	transform: rotate(45deg);
+	border: none;
+	background-color: #fff;
+	position: relative;
+	left: 50%; top: 50%;
+	height: 40px;
+	margin-left: -20px;
+	margin-top: -20px;
+}
+
+#content
+{
+	width: 100%;
+	border: none;
+	box-shadow: gray 0 0 2px;
+	outline: none;
+	padding: 8px;
+}
+
+#team
+{
+	width: 100%;
+	margin-bottom: 15px;
+	box-shadow: gray 0 0 2px;
+	border: none;
+	outline: none;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#form
+{
+	display: block;
+}
+
+#form textarea
+{
+	margin-bottom: 15px;
+}
+
+.button span:hover, .tag span:hover, .del:hover, .del:hover::before
+{
+	background-color: #efefef;
+	cursor: pointer;
+}
+
+ul.list
+{
+	padding: 0;
+	margin: 0;
+	margin-bottom: 15px;
+	list-style-type: none;
+	box-shadow: gray 0 0 2px;
+	width: 100%;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+
+ul.list li span, ul.book li span
+{
+	word-break: break-word;
+	padding: 8px 24px;
+	width: 100%;
+	display: block;
+	text-align: center;
+	text-transform: uppercase;
+	cursor: default;
+}
+
+ul.list li ul
+{
+	list-style-type: none;
+	padding: 0;
+	position: relative;
+	border-top: 0.5px #d3d3d3 solid;
+}
+
+ul.list li ul:empty
+{
+	border-top: none;
+}
+
+
+ul.list .tag
+{
+	padding: 0;
+	border-bottom: 0.5px #d3d3d3 solid;
+	position: relative;
+}
+
+ul.list .tag span
+{
+	padding-left: 48px;
+	border: none;
+	text-align: left;
+}
+
+ul.list .tag:last-child
+{
+	border-bottom: none;
+}
+
+ul.book
+{
+	padding: 0;
+	margin: 15px 0;
+	list-style-type: none;
+	border: 0.5px #d3d3d3 solid
+}
+
+ul.book li ul
+{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	display: none;
+}
+
+ul.book[disabled] li ul, ul.book li:hover ul
+{
+	display: block;
+}
+
+ul.book li ul li
+{
+	padding: 8px;
+	padding-left: 16px;
+	position: relative;
+	border-top: 0.5px #d3d3d3 solid
+}
+
+ul.book li ul li::before
+{
+	display: block;
+	content: "";
+	width: 8px; height: 75%;
+	position: absolute;
+	left: 0px;
+	top: 12.5%;
+	background-color: #efefef;
+}
+
+ul.book li ul li[data-book="0"]::before /*wishlist*/
+{
+	background-color: #8b9197;
+}
+
+ul.book li ul li[data-book="1"]::before /*owned*/
+{
+	background-color: #27333f;
+}
+
+ul.book li ul li[data-book="2"]::before /*onlist*/
+{
+	background-color: #f3ba1f;
+}
+
+ul.book li ul li[data-book="3"]::before /*started*/
+{
+	background-color: #ea2a2a;
+}
+
+ul.book li ul li[data-book="4"]::before /*doing*/
+{
+	background-color: #292f88;
+}
+
+ul.book li ul li[data-book="#"]::before /*broke*/
+{
+	background-color: #5db5d7;
+}
+
+ul.book li ul li[data-book="5"]::before /*finished*/
+{
+	background-color: #4d875e;
+}
+
+ul.book li ul li[data-book="*"]::before /*good book*/
+{
+	background-color: #25ba4f;
+}
